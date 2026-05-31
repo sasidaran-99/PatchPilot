@@ -156,8 +156,6 @@ async def scan(
         if not success:
             safe_rmtree(job_dir)
 
-    
-
 
 @app.post("/scan-url", response_model=ScanResponse)
 async def scan_url(
