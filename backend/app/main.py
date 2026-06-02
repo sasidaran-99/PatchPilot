@@ -11,7 +11,7 @@ from typing import List
 
 
 import httpx
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException,Request
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
@@ -24,6 +24,7 @@ from .scanners.gitleaks import run_gitleaks
 from .scanners.osv import run_osv_scanner
 from .scanners.semgrep import run_semgrep
 from .utils.fs import ensure_dir, safe_rmtree, unzip_to_dir
+
 MAX_UPLOAD_MB = int(os.environ.get("MAX_UPLOAD_MB", 100))
 MAX_UPLOAD_SIZE = MAX_UPLOAD_MB * 1024 * 1024
 
